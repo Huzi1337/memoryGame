@@ -1,6 +1,10 @@
 <main>
   <div class="cards__container">
-    <app-card *ngFor="let pictureURL of pictureURLs" [imageURL]="pictureURL" />
+    <app-card
+      *ngFor="let pictureURL of pictureURLs"
+      [imageURL]="pictureURL"
+      [gameControl]="gameControl"
+    />
   </div>
-  <button (click)="startGame(5)">Start</button>
+  <button (click)="startGame()" [disabled]="hasStarted">Start</button>
 </main>

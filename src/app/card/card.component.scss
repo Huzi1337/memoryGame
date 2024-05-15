@@ -3,3 +3,16 @@
   width: 200px;
   height: 200px;
 }
+
+.blinder {
+  position: absolute;
+  inset: 0;
+  background-color: beige;
+  z-index: 5;
+  border: 2px solid black;
+}
+
+.completed {
+  border: 2px solid orchid;
+  pointer-events: none;
+}

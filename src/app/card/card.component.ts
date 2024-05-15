@@ -1,21 +1,32 @@
 import { Component, Input } from '@angular/core';
-import { NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage, NgIf } from '@angular/common';
+import { GameControlService } from '../game-control.service';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [NgOptimizedImage],
+  imports: [NgOptimizedImage, NgIf],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
 })
 export class CardComponent {
   @Input() imageURL!: string;
-  isShown = false;
+  @Input() gameControl!: GameControlService;
 
-  show() {
-    this.isShown = true;
-  }
+  constructor() {}
+  isShown = false;
+  isCompleted = false;
+
   hide() {
     this.isShown = false;
+  }
+  show() {
+    if (!this.gameControl.controlsDisabled) {
+      this.isShown = true;
+      this.gameControl.addShown(this);
+    }
+  }
+  markCompleted() {
+    this.isCompleted = true;
   }
 }

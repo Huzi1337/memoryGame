@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CardComponent } from '../card/card.component';
 import { PictureListService } from '../picture-list.service';
 import { NgFor } from '@angular/common';
+import { GameControlService } from '../game-control.service';
 
 @Component({
   selector: 'app-memo-game',
@@ -12,11 +13,19 @@ import { NgFor } from '@angular/common';
 })
 export class MemoGameComponent {
   hasStarted = false;
+  numberOfPictures = 5;
   pictureURLs: string[] = [];
 
-  constructor(private pictureList: PictureListService) {}
+  constructor(
+    private pictureList: PictureListService,
+    public gameControl: GameControlService
+  ) {}
 
-  startGame(numberOfPictures: number) {
-    this.pictureURLs = this.pictureList.generate(numberOfPictures);
+  startGame() {
+    this.hasStarted = true;
+    this.gameControl.picturesLeft = this.numberOfPictures;
+    this.pictureURLs = this.pictureList.generate(this.numberOfPictures);
   }
+
+  addShown() {}
 }

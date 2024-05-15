@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 
 @Component({
@@ -9,6 +9,7 @@ import { NgOptimizedImage } from '@angular/common';
   styleUrl: './card.component.scss',
 })
 export class CardComponent {
+  @Input() imageURL!: string;
   isShown = false;
 
   show() {

@@ -1,5 +1,6 @@
 <main>
   <div class="cards__container">
-    <app-card />
+    <app-card *ngFor="let pictureURL of pictureURLs" [imageURL]="pictureURL" />
   </div>
+  <button (click)="startGame(5)">Start</button>
 </main>

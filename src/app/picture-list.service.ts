@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class PictureListService {
-  url = 'https://picsum.photos/200?random=';
+  url = 'https://picsum.photos/600?random=';
 
   constructor() {}
 

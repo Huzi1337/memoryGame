@@ -12,7 +12,7 @@ export class GameControlService {
 
   constructor() {}
 
-  addShown(card: CardComponent) {
+  selectCard(card: CardComponent) {
     this.currentlyShown.push(card);
     this.movesCount++;
     if (this.currentlyShown.length === 2) {

@@ -23,7 +23,7 @@ export class CardComponent {
   show() {
     if (!this.gameControl.controlsDisabled) {
       this.isShown = true;
-      this.gameControl.addShown(this);
+      this.gameControl.selectCard(this);
     }
   }
   markCompleted() {

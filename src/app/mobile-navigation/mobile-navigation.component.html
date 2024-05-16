@@ -1,0 +1,7 @@
+<button class="menuBtn" (click)="openMenu()">
+  <img ngSrc="/assets/menu.svg" fill />
+</button>
+<nav [ngClass]="currentClasses">
+  <a routerLink="/home">Home</a>
+  <a routerLink="memo-game">Game</a>
+</nav>

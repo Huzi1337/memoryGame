@@ -1,36 +1,33 @@
 @use "../assets/colors";
+$logoWidth: 205px;
+$logoHeight: 77px;
 
 :host {
   background-color: colors.$main;
   display: flex;
   flex-direction: column;
+  min-width: 320px;
   min-height: 100vh;
   margin: 0;
 }
 
 .navbar {
   background-color: white;
+  position: relative;
+  z-index: 99;
   display: flex;
   align-items: center;
   gap: 64px;
-  padding: 8px;
-  img {
-    object-fit: cover;
-  }
+  padding: 8px 16px;
 }
+
 .logo__container {
   position: relative;
-  width: 200px;
-  height: 200px;
+  min-width: 205px;
+  min-height: 77px;
 }
 .navigation {
   display: flex;
   align-items: center;
   gap: 32px;
-
-  color: black;
-  font-size: 24px;
-  a {
-    text-decoration: none;
-  }
 }

@@ -6,9 +6,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 export const routes: Routes = [
   {
     path: 'home',
+    title: 'Home',
     component: HomeComponent,
   },
   {
+    title: 'Game',
     path: 'memo-game',
     component: MemoGameComponent,
   },

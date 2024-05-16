@@ -1,0 +1,35 @@
+@use "../../assets/colors";
+:host {
+  margin-left: auto;
+}
+
+.menuBtn {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background-color: transparent;
+}
+
+.navigation__mobile {
+  position: fixed;
+  width: 200px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition-duration: 200ms;
+  transform: translateX(400px);
+  background-color: colors.$white;
+  padding: 16px;
+  gap: 16px;
+}
+
+.navigation__mobile.active {
+  transform: translateX(0);
+  filter: drop-shadow(-1px 0 10px colors.$main);
+}

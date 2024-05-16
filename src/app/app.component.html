@@ -1,9 +1,14 @@
 <header class="navbar">
-  <img ngSrc="assets/logo.svg" width="205" height="77" priority />
+  <div class="logo__container">
+    <img ngSrc="assets/logo.svg" fill priority />
+  </div>
 
-  <nav class="navigation">
-    <a routerLink="/home">Home</a><a routerLink="memo-game">Memory Game</a>
+  <nav *ngIf="!isMobile" class="navigation">
+    <a routerLink="/home">Home</a>
+    <a routerLink="memo-game">Game</a>
   </nav>
+
+  <app-mobile-navigation *ngIf="isMobile" />
 </header>
 
 <router-outlet />

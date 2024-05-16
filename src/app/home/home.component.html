@@ -1,12 +1,13 @@
 <div class="background">
   <video
+    #video
     class="video"
     src="/assets/shortSynapses.mp4"
     loop
-    autoplay
     muted
-    [playbackRate]="videoPlaybackRate"
-    (ended)="switchPlaybackRate()"
+    [autoplay]
+    playsinline
+    (mouseover)="startPlaying()"
   ></video>
 </div>
 <div class="content">

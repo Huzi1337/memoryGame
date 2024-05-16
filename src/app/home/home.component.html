@@ -1,10 +1,12 @@
 <div class="background">
   <video
     class="video"
-    src="/assets/homePageVideo.mp4"
+    src="/assets/shortSynapses.mp4"
     loop
     autoplay
-    onended=""
+    muted
+    [playbackRate]="videoPlaybackRate"
+    (ended)="switchPlaybackRate()"
   ></video>
 </div>
 <div class="content">

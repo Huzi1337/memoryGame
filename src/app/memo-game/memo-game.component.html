@@ -1,10 +1,28 @@
-<main>
-  <div class="cards__container">
-    <app-card
-      *ngFor="let pictureURL of pictureURLs"
-      [imageURL]="pictureURL"
-      [gameControl]="gameControl"
-    />
+<h1 *ngIf="!gameControl.hasStarted">Ready to memorize?</h1>
+<div *ngIf="gameControl.gameIsComplete" class="shadow"></div>
+
+<div *ngIf="gameControl.gameIsComplete" class="winScreen">
+  <h1>
+    You won in
+    {{
+      gameControl.movesCount +
+        (gameControl.movesCount > 1 ? " moves" : " move")
+    }}!
+  </h1>
+  <div class="winScreen__navigation">
+    <button (click)="gameControl.startGame()">Play again</button>
   </div>
-  <button (click)="startGame()" [disabled]="hasStarted">Start</button>
-</main>
+</div>
+<h1 *ngIf="gameControl.hasStarted && !gameControl.gameIsComplete">
+  Moves made: {{ gameControl.movesCount }}
+</h1>
+<div class="cards__container">
+  <app-card
+    *ngFor="let pictureURL of gameControl.pictureURLs"
+    [imageURL]="pictureURL"
+    [gameControl]="gameControl"
+  />
+</div>
+<button *ngIf="!gameControl.hasStarted" (click)="gameControl.startGame()">
+  Start
+</button>

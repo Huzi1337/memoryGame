@@ -8,8 +8,11 @@ export class PictureListService {
 
   constructor() {}
 
-  generate(length: number) {
-    let imageURLs = Array.from({ length }, (_, index) => this.url + index);
+  generate(length: number, startIndex = 0) {
+    let imageURLs = Array.from(
+      { length },
+      (_, index) => this.url + startIndex + index
+    );
     return this.shuffle(this.doubleArray(imageURLs));
   }
 

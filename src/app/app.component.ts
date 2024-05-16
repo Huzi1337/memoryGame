@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule, NgClass, NgIf, NgOptimizedImage } from '@angular/common';
-import { RouterOutlet, RouterLink } from '@angular/router';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { FetchToDoService } from './fetch-to-do.service';
-import { Observable, Subscription, debounceTime, fromEvent } from 'rxjs';
+import { Observable, Subscription, fromEvent } from 'rxjs';
 import { MobileNavigationComponent } from './mobile-navigation/mobile-navigation.component';
 
 @Component({
@@ -16,6 +16,7 @@ import { MobileNavigationComponent } from './mobile-navigation/mobile-navigation
     NgIf,
     NgClass,
     MobileNavigationComponent,
+    RouterLinkActive,
   ],
   providers: [FetchToDoService],
   templateUrl: './app.component.html',

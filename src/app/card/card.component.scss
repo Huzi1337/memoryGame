@@ -1,7 +1,20 @@
+@use "../../assets/breakpoints";
+
 .container {
   position: relative;
   width: 200px;
   height: 200px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  @media (max-width: 500px) {
+    width: 100px;
+    height: 100px;
+  }
+  @media (min-width: breakpoints.$lg) {
+    width: 400px;
+    height: 400px;
+  }
 }
 
 .blinder {
@@ -9,10 +22,24 @@
   inset: 0;
   background-color: beige;
   z-index: 5;
+  &:hover {
+    background-color: rgb(247, 247, 242);
+  }
+}
+
+.blinder,
+img {
   border: 2px solid black;
+  @media (min-width: breakpoints.$lg) {
+    border-width: 8px;
+  }
 }
 
 .completed {
-  border: 2px solid orchid;
+  border: 2px solid #88dd8b;
   pointer-events: none;
+  cursor: default;
+  @media (min-width: breakpoints.$lg) {
+    border-width: 8px;
+  }
 }

@@ -1,4 +1,46 @@
+@use "../../assets/colors";
+:host {
+  flex-grow: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: colors.$white;
+  gap: 32px;
+  padding: 8px;
+}
+
 .cards__container {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.winScreen {
+  position: fixed;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 99;
+  text-align: center;
+}
+
+.shadow {
+  position: fixed;
+  inset: 0;
+  opacity: 0.7;
+  z-index: 1;
+  background-color: colors.$main;
+}
+
+.winScreen__navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
 }

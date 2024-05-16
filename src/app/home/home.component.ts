@@ -10,5 +10,11 @@ import { RouterLink } from '@angular/router';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
+  videoPlaybackRate = 1;
+
   @Input() homeResidents!: string[];
+
+  switchPlaybackRate() {
+    this.videoPlaybackRate = -this.videoPlaybackRate;
+  }
 }

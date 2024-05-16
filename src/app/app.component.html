@@ -4,8 +4,8 @@
   </div>
 
   <nav *ngIf="!isMobile" class="navigation">
-    <a routerLink="/home">Home</a>
-    <a routerLink="memo-game">Game</a>
+    <a routerLinkActive="activeLink" routerLink="home">Home</a>
+    <a routerLinkActive="activeLink" routerLink="memo-game">Game</a>
   </nav>
 
   <app-mobile-navigation *ngIf="isMobile" />

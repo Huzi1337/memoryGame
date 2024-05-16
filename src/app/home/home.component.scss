@@ -1,5 +1,46 @@
-.section80 {
-  padding: 8px;
-  background-color: bisque;
-  border: 2px solid black;
+@use "../../assets/colors";
+
+:host {
+  flex-grow: 1;
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 0 8px;
+  box-sizing: border-box;
+  color: colors.$white;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+  z-index: 1;
+  flex-grow: 1;
+  gap: 32px;
+}
+
+.text {
+  position: abs($number: 0);
+  flex-basis: 1;
+}
+
+.video__container {
+  flex-basis: 4;
+}
+
+.video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  filter: grayscale(0.4);
 }

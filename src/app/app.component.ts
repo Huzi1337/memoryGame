@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { FetchToDoService } from './fetch-to-do.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, RouterLink],
+  imports: [RouterOutlet, CommonModule, RouterLink, NgOptimizedImage],
   providers: [FetchToDoService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
